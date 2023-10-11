@@ -6,8 +6,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1930,  # year
         [
             "Nasazzi",  # winning team captain
-            "Manuel Ferreira"  # losing team captain
-        ]  # captains, winning team first
+            "Manuel Ferreira",  # losing team captain
+        ],  # captains, winning team first
     ),
     (
         "2-1",
@@ -16,8 +16,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1934,
         [
             "Combi",
-            "Planicka"
-        ]
+            "Planicka",
+        ],
     ),
     (
         "4-2",
@@ -26,8 +26,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1938,
         [
             "Ferrari",
-            "Szalay"
-        ]
+            "Szalay",
+        ],
     ),
     (
         "4-2",
@@ -36,8 +36,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1950,
         [
             "Nasazzi",
-            "Augusto"
-        ]
+            "Augusto",
+        ],
     ),
     (
         "3-2",
@@ -46,8 +46,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1954,
         [
             "Fritz Walter",
-            "Bozsik"
-        ]
+            "Bozsik",
+        ],
     ),
     (
         "5-2",
@@ -56,8 +56,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1958,
         [
             "Bellini",
-            "Nils Liedholm"
-        ]
+            "Nils Liedholm",
+        ],
     ),
     (
         "3-2",
@@ -66,8 +66,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1962,
         [
             "Mauro Ramos",
-            "Karol Dobias"
-        ]
+            "Karol Dobias",
+        ],
     ),
     (
         "4-2",
@@ -76,8 +76,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1966,
         [
             "Bobby Moore",
-            "Uwe Seeler"
-        ]
+            "Uwe Seeler",
+        ],
     ),
     (
         "4-1",
@@ -86,8 +86,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1970,
         [
             "Carlos Alberto",
-            "Giacinto Facchetti"
-        ]
+            "Giacinto Facchetti",
+        ],
     ),
     (
         "2-1",
@@ -96,8 +96,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1974,
         [
             "Franz Beckenbauer",
-            "Wim Suurbier"
-        ]
+            "Wim Suurbier",
+        ],
     ),
     (
         "3-1",
@@ -106,8 +106,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1978,
         [
             "Daniel Passarella",
-            "Ruud Krol"
-        ]
+            "Ruud Krol",
+        ],
     ),
     (
         "3-2",
@@ -116,8 +116,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1982,
         [
             "Dino Zoff",
-            "Karl-Heinz Rummenigge"
-        ]
+            "Karl-Heinz Rummenigge",
+        ],
     ),
     (
         "3-0",
@@ -126,8 +126,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1986,
         [
             "Diego Maradona",
-            "Karl-Heinz Rummenigge"
-        ]
+            "Karl-Heinz Rummenigge",
+        ],
     ),
     (
         "0-0 (a.e.t., 3-2 pens)",
@@ -136,8 +136,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1990,
         [
             "Lothar Matthäus",
-            "Diego Maradona"
-        ]
+            "Diego Maradona",
+        ],
     ),
     (
         "3-0",
@@ -146,8 +146,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1994,
         [
             "Dunga",
-            "Paolo Maldini"
-        ]
+            "Paolo Maldini",
+        ],
     ),
     (
         "3-0",
@@ -156,8 +156,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1998,
         [
             "Didier Deschamps",
-            "Cafu"
-        ]
+            "Cafu",
+        ],
     ),
     (
         "2-0",
@@ -166,8 +166,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         2002,
         [
             "Cafu",
-            "Oliver Kahn"
-        ]
+            "Oliver Kahn",
+        ],
     ),
     (
         "1-1 (a.e.t., 5-3 pens)",
@@ -176,8 +176,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         2006,
         [
             "Fabio Cannavaro",
-            "Lilian Thuram"
-        ]
+            "Lilian Thuram",
+        ],
     ),
     (
         "1-0 (a.e.t.)",
@@ -186,8 +186,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         2010,
         [
             "Iker Casillas",
-            "Giovanni van Bronckhorst"
-        ]
+            "Giovanni van Bronckhorst",
+        ],
     ),
     (
         "1-0",
@@ -196,8 +196,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         2014,
         [
             "Philipp Lahm",
-            "Lionel Messi"
-        ]
+            "Lionel Messi",
+        ],
     ),
     (
         "4-2",
@@ -206,18 +206,18 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         2018,
         [
             "Hugo Lloris",
-            "Luka Modric"
-        ]
+            "Luka Modric",
+        ],
     ),
     (
-        "1-0 (a.e.t.)",
-        "Italy",
-        "England",
-        2021,
+        "2-0",
+        "Argentina",
+        "France",
+        2022,
         [
-            "Giorgio Chiellini",
-            "Harry Kane"
-        ]
+            "Lionel Messi",
+            "Kylian Mbappe",
+        ],
     )
 ]
 
