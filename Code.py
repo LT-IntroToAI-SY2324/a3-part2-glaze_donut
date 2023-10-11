@@ -9,9 +9,6 @@ def get_score(game: Tuple[str, str, str, int, List[str]]) -> str:
 def get_winner(game: Tuple[str, str, str, int, List[str]]) -> str:
     return game[1]
 
-# for movie in movie_db:
-#     print(get_director(movie))
-
 def get_loser(game: Tuple[str, str, str, int, List[str]]) -> str:
     return game[2]
 
