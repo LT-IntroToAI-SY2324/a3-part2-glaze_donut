@@ -1,3 +1,5 @@
+from typing import List, Tuple
+
 games_db: List[Tuple[str, str, str, int, List[str]]] = [
     (
         "4-2",  # final score
