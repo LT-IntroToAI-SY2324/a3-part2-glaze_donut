@@ -1,5 +1,12 @@
 Year, Captains, Final Score, Most Points
 
 Who scored the most points in year?
+    return winner
 Who were the team captains in year?
+    return lst of captains
 What was the final score in year?
+    return score
+How many world cups did team win?
+    return an integer
+What years has team played in?
+    return lst of years
