@@ -8,7 +8,7 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1930,  # year
         [
             "Nasazzi",  # winning team captain
-            "Manuel Ferreira",  # losing team captain
+            "Ferreira",  # losing team captain
         ],  # captains, winning team first
     ),
     (
@@ -43,11 +43,11 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
     ),
     (
         "3-2",
-        "West Germany",
+        "Germany",
         "Hungary",
         1954,
         [
-            "Fritz Walter",
+            "Walter",
             "Bozsik",
         ],
     ),
@@ -58,7 +58,7 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1958,
         [
             "Bellini",
-            "Nils Liedholm",
+            "Liedholm",
         ],
     ),
     (
@@ -67,18 +67,18 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "Czechoslovakia",
         1962,
         [
-            "Mauro Ramos",
-            "Karol Dobias",
+            "Ramos",
+            "Dobias",
         ],
     ),
     (
         "4-2",
         "England",
-        "West Germany",
+        "Germany",
         1966,
         [
-            "Bobby Moore",
-            "Uwe Seeler",
+            "Moore",
+            "Seeler",
         ],
     ),
     (
@@ -87,18 +87,18 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "Italy",
         1970,
         [
-            "Carlos Alberto",
-            "Giacinto Facchetti",
+            "Alberto",
+            "Facchetti",
         ],
     ),
     (
         "2-1",
-        "West Germany",
+        "Germany",
         "Netherlands",
         1974,
         [
-            "Franz Beckenbauer",
-            "Wim Suurbier",
+            "Beckenbauer",
+            "Suurbier",
         ],
     ),
     (
@@ -107,38 +107,38 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "Netherlands",
         1978,
         [
-            "Daniel Passarella",
-            "Ruud Krol",
+            "Passarella",
+            "Krol",
         ],
     ),
     (
         "3-2",
         "Italy",
-        "West Germany",
+        "Germany",
         1982,
         [
-            "Dino Zoff",
-            "Karl-Heinz Rummenigge",
+            "Zoff",
+            "Rummenigge",
         ],
     ),
     (
         "3-0",
         "Argentina",
-        "West Germany",
+        "Germany",
         1986,
         [
-            "Diego Maradona",
-            "Karl-Heinz Rummenigge",
+            "Maradona",
+            "Rummenigge",
         ],
     ),
     (
         "0-0 (a.e.t., 3-2 pens)",
-        "West Germany",
+        "Germany",
         "Argentina",
         1990,
         [
-            "Lothar Matthäus",
-            "Diego Maradona",
+            "Matthäus",
+            "Maradona",
         ],
     ),
     (
@@ -148,7 +148,7 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         1994,
         [
             "Dunga",
-            "Paolo Maldini",
+            "Maldini",
         ],
     ),
     (
@@ -157,7 +157,7 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "Brazil",
         1998,
         [
-            "Didier Deschamps",
+            "Deschamps",
             "Cafu",
         ],
     ),
@@ -168,7 +168,7 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         2002,
         [
             "Cafu",
-            "Oliver Kahn",
+            "Kahn",
         ],
     ),
     (
@@ -177,8 +177,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "France",
         2006,
         [
-            "Fabio Cannavaro",
-            "Lilian Thuram",
+            "Cannavaro",
+            "Thuram",
         ],
     ),
     (
@@ -187,8 +187,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "Netherlands",
         2010,
         [
-            "Iker Casillas",
-            "Giovanni van Bronckhorst",
+            "Casillas",
+            "van Bronckhorst",
         ],
     ),
     (
@@ -197,8 +197,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "Argentina",
         2014,
         [
-            "Philipp Lahm",
-            "Lionel Messi",
+            "Lahm",
+            "Messi",
         ],
     ),
     (
@@ -207,8 +207,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "Croatia",
         2018,
         [
-            "Hugo Lloris",
-            "Luka Modric",
+            "Lloris",
+            "Modric",
         ],
     ),
     (
@@ -217,8 +217,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
         "France",
         2022,
         [
-            "Lionel Messi",
-            "Kylian Mbappe",
+            "Messi",
+            "Mbappe",
         ],
     )
 ]

@@ -19,8 +19,8 @@ def get_year(game: Tuple[str, str, str, int, List[str]]) -> int:
 def get_captains(game: Tuple[str, str, str, int, List[str]]) -> List[str]:
     return game[4]
 
-def _by_year(matches: List[str]) -> List[str]:
-    """Finds all movies made in the passed in year
+def points_by_year(matches: List[str]) -> List[str]:
+    """Finds team that scored most points in the passed in year
 
     Args:
         matches - a list of 1 string, just the year. Note that this year is passed as a
@@ -34,12 +34,99 @@ def _by_year(matches: List[str]) -> List[str]:
     for game in games_db:
         if int(matches[0]) == get_year(game):
             # print(get_title(movie))
-            results.append(get_title(movie))
+            results.append(get_winner(game))
     # print(results)
     return results
 
+def captains_by_year(matches: List[str]) -> List[str]:
+    """Finds captains in the passed in year
+
+    Args:
+        matches - a list of 1 string, just the year. Note that this year is passed as a
+            string and should be converted to an int
+
+    Returns:
+        a list of movie titles made in the passed in year
+    """
+    results = []
+    # print(matches)
+    for game in games_db:
+        if int(matches[0]) == get_year(game):
+            # print(get_title(movie))
+            results.append(get_captains(game))
+    # print(results)
+    return results
+def captains_by_year(matches: List[str]) -> List[str]:
+    """Finds captains in the passed in year
+
+    Args:
+        matches - a list of 1 string, just the year. Note that this year is passed as a
+            string and should be converted to an int
+
+    Returns:
+        a list of movie titles made in the passed in year
+    """
+    results = []
+    # print(matches)
+    for game in games_db:
+        if int(matches[0]) == get_year(game):
+            # print(get_title(movie))
+            results=(get_captains(game))
+    # print(results)
+    return results
+def points_by_year(matches: List[str]) -> List[str]:
+    """Finds captains in the passed in year
+
+    Args:
+        matches - a list of 1 string, just the year. Note that this year is passed as a
+            string and should be converted to an int
+
+    Returns:
+        a list of movie titles made in the passed in year
+    """
+    results = []
+    # print(matches)
+    for game in games_db:
+        if int(matches[0]) == get_year(game):
+            # print(get_title(movie))
+            results.append(get_score(game))
+    # print(results)
+    return results
+def captains_by_year(matches: List[str]) -> List[str]:
+    """Finds captains in the passed in year
+
+    Args:
+        matches - a list of 1 string, just the year. Note that this year is passed as a
+            string and should be converted to an int
+
+    Returns:
+        a list of movie titles made in the passed in year
+    """
+    results = []
+    # print(matches)
+    for game in games_db:
+        if int(matches[0]) == get_year(game):
+            # print(get_title(movie))
+            results.append(get_captains(game))
+    # print(results)
+    return results
+def year_by_captain(matches: List[str]) -> List[str]:
+    """Finds titles of all movies that the given actor was in
+
+    Args:
+        matches - a list of 1 string, just the actor
+
+    Returns:
+        a list of movie titles that the actor acted in
+    """
+    results = []
+    for game in games_db:
+        if matches[0] in get_captains(game):
+            results.append(get_year(game))
+    # print(results)
+    return results
 a_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
-    (str.split("what movies were made in _"), title_by_year),
+    (str.split("What team scored the most points in _"), points_by_year),
     (str.split("what movies were made between _ and _"), title_by_year_range),
     (str.split("what movies were made before _"), title_before_year),
     (str.split("what movies were made after _"), title_after_year),
