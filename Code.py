@@ -19,16 +19,7 @@ def get_year(game: Tuple[str, str, str, int, List[str]]) -> int:
 def get_captains(game: Tuple[str, str, str, int, List[str]]) -> List[str]:
     return game[4]
 
-def points_by_year(matches: List[str]) -> List[str]:
-    """Finds team that scored most points in the passed in year
-
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
-
-    Returns:
-        a list of movie titles made in the passed in year
-    """
+def winner_by_year(matches: List[str]) -> List[str]:
     results = []
     # print(matches)
     for game in games_db:
@@ -37,35 +28,26 @@ def points_by_year(matches: List[str]) -> List[str]:
             results.append(get_winner(game))
     # print(results)
     return results
-
-def captains_by_year(matches: List[str]) -> List[str]:
-    """Finds captains in the passed in year
-
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
-
-    Returns:
-        a list of movie titles made in the passed in year
-    """
+def loser_by_year(matches: List[str]) -> List[str]:
     results = []
     # print(matches)
     for game in games_db:
         if int(matches[0]) == get_year(game):
             # print(get_title(movie))
-            results.append(get_captains(game))
+            results.append(get_loser(game))
+    # print(results)
+    return results
+def teams_by_year(matches: List[str]) -> List[str]:
+    results = []
+    # print(matches)
+    for game in games_db:
+        if int(matches[0]) == get_year(game):
+            # print(get_title(movie))
+            results.append(get_loser(game))
+            results.append(get_winner(game))
     # print(results)
     return results
 def captains_by_year(matches: List[str]) -> List[str]:
-    """Finds captains in the passed in year
-
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
-
-    Returns:
-        a list of movie titles made in the passed in year
-    """
     results = []
     # print(matches)
     for game in games_db:
@@ -75,15 +57,6 @@ def captains_by_year(matches: List[str]) -> List[str]:
     # print(results)
     return results
 def points_by_year(matches: List[str]) -> List[str]:
-    """Finds captains in the passed in year
-
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
-
-    Returns:
-        a list of movie titles made in the passed in year
-    """
     results = []
     # print(matches)
     for game in games_db:
@@ -92,82 +65,56 @@ def points_by_year(matches: List[str]) -> List[str]:
             results.append(get_score(game))
     # print(results)
     return results
-def captains_by_year(matches: List[str]) -> List[str]:
-    """Finds captains in the passed in year
-
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
-
-    Returns:
-        a list of movie titles made in the passed in year
-    """
+def year_by_team(matches: List[str]) -> List[str]:
     results = []
     # print(matches)
     for game in games_db:
-        if int(matches[0]) == get_year(game):
+        if int(matches[1]) == get_winner(game):
             # print(get_title(movie))
-            results.append(get_captains(game))
+            results.append(get_year(game))
+        if int(matches[2]) == get_loser(game):
+            # print(get_title(movie))
+            results.append(get_year(game))
     # print(results)
     return results
-def year_by_captain(matches: List[str]) -> List[str]:
-    """Finds titles of all movies that the given actor was in
-
-    Args:
-        matches - a list of 1 string, just the actor
-
-    Returns:
-        a list of movie titles that the actor acted in
-    """
+def years_by_captain(matches: List[str]) -> List[str]:
     results = []
     for game in games_db:
         if matches[0] in get_captains(game):
             results.append(get_year(game))
     # print(results)
     return results
-a_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
-    (str.split("What team scored the most points in _"), points_by_year),
-    (str.split("what movies were made between _ and _"), title_by_year_range),
-    (str.split("what movies were made before _"), title_before_year),
-    (str.split("what movies were made after _"), title_after_year),
-    # note there are two valid patterns here two different ways to ask for the director
-    # of a movie
-    (str.split("who directed %"), director_by_title),
-    (str.split("who was the director of %"), director_by_title),
-    (str.split("what movies were directed by %"), title_by_director),
-    (str.split("who acted in %"), actors_by_title),
-    (str.split("when was % made"), year_by_title),
-    (str.split("% appeared in what movies"), title_by_actor),
-    (str.split("in what movies did % appear"), title_by_actor),
-    (["bye"], bye_action),
+def numwins_by_team(matches: List[str]) -> List[str]:
+    count = 0
+    # print(matches)
+    for game in games_db:
+        if int(matches[1]) == get_winner(game):
+           count+=1
+
+    return count
+pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
+    (str.split("Who were the team captains in _"), captains_by_year),
+    (str.split("What was the final score in _"), points_by_year),
+    (str.split("What world cups has _ played in"), years_by_team),
+    (str.split("Who won in _"), winner_by_year),
+    (str.split("Who lost in _"), loser_by_year),
+    (str.split("What year has the captain _ played in"), years_by_captain),
+    (str.split("What team lost and what team won in _"), teams_by_year),
+    (str.split("How many times has _ won"), teams_by_year),
 ]
 
 
 def search_pa_list(src: List[str]) -> List[str]:
-    """Takes source, finds matching pattern and calls corresponding action. If it finds
-    a match but has no answers it returns ["No answers"]. If it finds no match it
-    returns ["I don't understand"].
-
-    Args:
-        source - a phrase represented as a list of words (strings)
-
-    Returns:
-        a list of answers. Will be ["I don't understand"] if it finds no matches and
-        ["No answers"] if it finds a match but no answers
-    """
     for pat, act in pa_list:
         mat = match(pat, src)
         if mat is not None:
             answer = act(mat)
-            # print(answer)
+            
             return answer if answer else ["No answers"]   
     return ["I don't understand"]
 
 
 def query_loop() -> None:
-    """The simple query loop. The try/except structure is to catch Ctrl-C or Ctrl-D
-    characters and exit gracefully.
-    """
     print("Welcome to the movie database!\n")
     while True:
         try:
