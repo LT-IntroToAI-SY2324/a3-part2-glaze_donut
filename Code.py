@@ -100,7 +100,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("Who lost in _"), loser_by_year),
     (str.split("What year has the captain _ played in"), years_by_captain),
     (str.split("What team lost and what team won in _"), teams_by_year),
-    (str.split("How many times has _ won"), numwins_by_year),
+    (str.split("How many times has _ won"), numwins_by_team),
 ]
 
 
