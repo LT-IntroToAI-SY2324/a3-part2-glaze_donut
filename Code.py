@@ -21,74 +21,74 @@ def get_captains(game: Tuple[str, str, str, int, List[str]]) -> List[str]:
 
 def winner_by_year(matches: List[str]) -> List[str]:
     results = []
-    # print(matches)
+    
     for game in games_db:
         if int(matches[0]) == get_year(game):
-            # print(get_title(movie))
+            
             results.append(get_winner(game))
-    # print(results)
+    
     return results
 def loser_by_year(matches: List[str]) -> List[str]:
     results = []
-    # print(matches)
+    
     for game in games_db:
         if int(matches[0]) == get_year(game):
-            # print(get_title(movie))
+            
             results.append(get_loser(game))
-    # print(results)
+   
     return results
 def teams_by_year(matches: List[str]) -> List[str]:
     results = []
-    # print(matches)
+    
     for game in games_db:
         if int(matches[0]) == get_year(game):
-            # print(get_title(movie))
+            
             results.append(get_loser(game))
             results.append(get_winner(game))
-    # print(results)
+    
     return results
 def captains_by_year(matches: List[str]) -> List[str]:
     results = []
-    # print(matches)
+   
     for game in games_db:
         if int(matches[0]) == get_year(game):
-            # print(get_title(movie))
+            
             results=(get_captains(game))
-    # print(results)
+    
     return results
 def points_by_year(matches: List[str]) -> List[str]:
     results = []
-    # print(matches)
+    
     for game in games_db:
         if int(matches[0]) == get_year(game):
-            # print(get_title(movie))
+            
             results.append(get_score(game))
-    # print(results)
+    
     return results
-def year_by_team(matches: List[str]) -> List[str]:
+def years_by_team(matches: List[str]) -> List[str]:
     results = []
-    # print(matches)
+    
     for game in games_db:
-        if int(matches[1]) == get_winner(game):
-            # print(get_title(movie))
+        if int(matches[0]) == get_winner(game):
+            
             results.append(get_year(game))
-        if int(matches[2]) == get_loser(game):
-            # print(get_title(movie))
+        if int(matches[0]) == get_loser(game):
+            
             results.append(get_year(game))
-    # print(results)
+    #
     return results
 def years_by_captain(matches: List[str]) -> List[str]:
     results = []
     for game in games_db:
         if matches[0] in get_captains(game):
             results.append(get_year(game))
-    # print(results)
+    
     return results
 def numwins_by_team(matches: List[str]) -> List[str]:
     count = 0
-    # print(matches)
+    
     for game in games_db:
-        if int(matches[1]) == get_winner(game):
+        if int(matches[0]) == get_winner(game):
            count+=1
 
     return count
@@ -100,7 +100,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("Who lost in _"), loser_by_year),
     (str.split("What year has the captain _ played in"), years_by_captain),
     (str.split("What team lost and what team won in _"), teams_by_year),
-    (str.split("How many times has _ won"), teams_by_year),
+    (str.split("How many times has _ won"), numwins_by_year),
 ]
 
 
