@@ -75,7 +75,7 @@ def years_by_team(matches: List[str]) -> List[str]:
         if int(matches[0]) == get_loser(game):
             
             results.append(get_year(game))
-    #
+    
     return results
 def years_by_captain(matches: List[str]) -> List[str]:
     results = []
