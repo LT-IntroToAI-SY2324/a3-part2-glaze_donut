@@ -98,10 +98,10 @@ def bye_action(dummy: List[str]) -> None:
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("Who were the team captains in _"), captains_by_year),
     (str.split("What was the final score in _"), points_by_year),
-    (str.split("What world cups has _ played in"), years_by_team),
+    (str.split("What world cups finals did _ make it to"), years_by_team),
     (str.split("Who won in _"), winner_by_year),
     (str.split("Who lost in _"), loser_by_year),
-    (str.split("What year has the captain _ played in"), years_by_captain),
+    (str.split("In what years has _ played in"), years_by_captain),
     (str.split("What team lost and what team won in _"), teams_by_year),
     (str.split("How many times has _ won"), numwins_by_team),
     (["bye"], bye_action),
