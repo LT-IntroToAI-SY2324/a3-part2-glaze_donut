@@ -113,7 +113,7 @@ def search_pa_list(src: List[str]) -> List[str]:
         mat = match(pat, src)
         if mat is not None:
             answer = act(mat)
-            # print(answer)
+            
             return answer if answer else ["No answers"]   
     return ["I don't understand"]
 
@@ -136,5 +136,5 @@ def query_loop() -> None:
 
     print("\nSo long!\n")
 
-#query_loop()
+query_loop()
 

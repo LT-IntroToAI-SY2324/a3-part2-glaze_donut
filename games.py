@@ -224,8 +224,8 @@ games_db: List[Tuple[str, str, str, int, List[str]]] = [
 ]
 
 # Example of accessing the data for the 1930 World Cup final
-print("Final score:", games_db[0][0])
-print("Winning team:", games_db[0][1])
-print("Losing team:", games_db[0][2])
-print("Year:", games_db[0][3])
-print("Captains:", games_db[0][4])
+# print("Final score:", games_db[0][0])
+# print("Winning team:", games_db[0][1])
+# print("Losing team:", games_db[0][2])
+# print("Year:", games_db[0][3])
+# print("Captains:", games_db[0][4])
