@@ -92,6 +92,9 @@ def numwins_by_team(matches: List[str]) -> List[str]:
            count+=1
 
     return count
+def bye_action(dummy: List[str]) -> None:
+    raise KeyboardInterrupt
+
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("Who were the team captains in _"), captains_by_year),
     (str.split("What was the final score in _"), points_by_year),
@@ -101,21 +104,36 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("What year has the captain _ played in"), years_by_captain),
     (str.split("What team lost and what team won in _"), teams_by_year),
     (str.split("How many times has _ won"), numwins_by_team),
+    (["bye"], bye_action),
 ]
 
 
 def search_pa_list(src: List[str]) -> List[str]:
+    """Takes source, finds matching pattern and calls corresponding action. If it finds
+    a match but has no answers it returns ["No answers"]. If it finds no match it
+    returns ["I don't understand"].
+
+    Args:
+        source - a phrase represented as a list of words (strings)
+
+    Returns:
+        a list of answers. Will be ["I don't understand"] if it finds no matches and
+        ["No answers"] if it finds a match but no answers
+    """
     for pat, act in pa_list:
         mat = match(pat, src)
         if mat is not None:
             answer = act(mat)
-            
+            # print(answer)
             return answer if answer else ["No answers"]   
     return ["I don't understand"]
 
 
 def query_loop() -> None:
-    print("Welcome to the movie database!\n")
+    """The simple query loop. The try/except structure is to catch Ctrl-C or Ctrl-D
+    characters and exit gracefully.
+    """
+    print("Welcome to the world cup database!\n")
     while True:
         try:
             print()
@@ -128,3 +146,6 @@ def query_loop() -> None:
             break
 
     print("\nSo long!\n")
+
+#query_loop()
+
